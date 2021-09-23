@@ -157,10 +157,10 @@ static Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
+	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
   /* new a floating window */
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
-	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
   /* switch the master window */
 	{ MODKEY,			XK_space,	zoom,		{0} },
   /* toggle floating */
