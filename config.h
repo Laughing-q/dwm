@@ -249,7 +249,9 @@ static Key keys[] = {
 
   /* dmenu option */
 	{ MODKEY,			XK_c,		spawn,		SHCMD("dm-confedit") },
+	{ MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("dm-websearch") },
+	{ MODKEY,			XK_g,		spawn,		SHCMD("$BROWSER www.github.com --new-window") },
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },
 
   /* Audio */
@@ -270,8 +272,8 @@ static Key keys[] = {
   /* other stuff */
 	{ 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },
-	{ MODKEY,			XK_Print,	spawn,		SHCMD("dmenurecord") },
-	{ MODKEY|ShiftMask,		XK_Print,	spawn,		SHCMD("dmenurecord kill") },
+	/* { MODKEY,			XK_Print,	spawn,		SHCMD("dmenurecord") }, */
+	/* { MODKEY|ShiftMask,		XK_Print,	spawn,		SHCMD("dmenurecord kill") }, */
 	/* { MODKEY,			XK_Delete,	spawn,		SHCMD("dmenurecord kill") }, */
 	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
 
@@ -303,8 +305,10 @@ static Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
+	/* { 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") }, */
+	/* { 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") }, */
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("light -U 10") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("light -A 10") },
 
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
