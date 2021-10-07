@@ -18,7 +18,7 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "FantasqueSansMono Nerd Font Mono Regular:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
+static char normfgcolor[]           = "#fffffb";
 static char selfgcolor[]            = "#eeeeee";
 /* static char selbordercolor[]        = "#770000"; */
 static char selbordercolor[]        = "#45b97c";
@@ -108,9 +108,10 @@ static const char *termcmd[]  = { TERMINAL, NULL };
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
-		{ "color8",		STRING,	&selbordercolor },
-		{ "color0",		STRING,	&normbgcolor },
-		{ "color4",		STRING,	&normfgcolor },
+		{ "color2",		STRING,	&selbordercolor },  // maybe color1
+		{ "color2",		STRING,	&normbgcolor },    // maybe color1
+		/* { "color4",		STRING,	&normfgcolor }, */
+		/* { "color7",		STRING,	&normfgcolor }, */
 		{ "color0",		STRING,	&selfgcolor },
 		{ "color4",		STRING,	&selbgcolor },
 		{ "borderpx",		INTEGER, &borderpx },
