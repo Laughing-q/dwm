@@ -272,7 +272,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_period,	spawn,		SHCMD("mpc repeat") },
 
   /* other stuff */
-	{ 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	/* { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") }, */
+	{ 0,				XK_Print,	spawn,		SHCMD("maimfull") },
 	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },
 	/* { MODKEY,			XK_Print,	spawn,		SHCMD("dmenurecord") }, */
 	/* { MODKEY|ShiftMask,		XK_Print,	spawn,		SHCMD("dmenurecord kill") }, */
