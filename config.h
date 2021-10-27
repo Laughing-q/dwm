@@ -223,7 +223,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } },
 	{ MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
 
-	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
+	/* { MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } }, */
+	{ MODKEY|ShiftMask,		XK_h,		shifttag,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
