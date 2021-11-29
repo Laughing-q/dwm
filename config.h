@@ -22,11 +22,19 @@ static char normfgcolor[]           = "#fffffb";
 static char selfgcolor[]            = "#eeeeee";
 /* static char selbordercolor[]        = "#770000"; */
 static char selbordercolor[]        = "#45b97c";
-static char selbgcolor[]            = "#005577";
+/* static char selbgcolor[]            = "#005577"; */
+static char selbgcolor[]            = "#37474F";
+static const unsigned int baralpha = 0x64;
+static const unsigned int borderalpha = OPAQUE;
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+};
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 typedef struct {
@@ -43,6 +51,7 @@ static Sp scratchpads[] = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/* static const char *tags[] = { "🐭", "🐮", "🐯", "🐰", "🐉", "🐍", "🐴", "🐑", "🐵" }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -109,11 +118,11 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
 		{ "color2",		STRING,	&selbordercolor },  // maybe color1
-		{ "color2",		STRING,	&normbgcolor },    // maybe color1
+		/* { "color2",		STRING,	&normbgcolor },    // maybe color1 */
 		/* { "color4",		STRING,	&normfgcolor }, */
 		/* { "color7",		STRING,	&normfgcolor }, */
 		{ "color0",		STRING,	&selfgcolor },
-		{ "color4",		STRING,	&selbgcolor },
+		/* { "color4",		STRING,	&selbgcolor }, */
 		{ "borderpx",		INTEGER, &borderpx },
 		{ "snap",		INTEGER, &snap },
 		{ "showbar",		INTEGER, &showbar },
