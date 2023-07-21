@@ -205,7 +205,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_h,		spawn,		SHCMD("translate") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lfimg") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD(TERMINAL " -e bpytop") },
-	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },             // never used
+	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },             // never used, figure the command
 
   /* Layouts */    // never used, probably should be removed
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
