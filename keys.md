@@ -1,13 +1,16 @@
 | Keys        | map(lowercase)               | Map(uppercase)           | Comment     |
 |-------------|------------------------------|--------------------------|-------------|
-| `q`         | quit window                  | <++>                     | --          |
 | `w`         | <++>                         | <++>                     | <++>        |
 | `e`         | <++>                         | <++>                     | <++>        |
-| `r`         | lf                           | bpytop                   | <++>        |
-| `t`         | layout                       | another layout           | <++>        |
 | `y`         | <++>                         | <++>                     | <++>        |
 | `u`         | <++>                         | <++>                     | <++>        |
 | `o`         | <++>                         | <++>                     | <++>        |
+| `z`         | <++>                         | <++>                     | <++>        |
+| `x`         | <++>                         | <++>                     | <++>        |
+| `/` `?`     | <++>                         | <++>                     | <++>        |
+| `q`         | quit window                  | <++>                     | --          |
+| `r`         | lf                           | bpytop                   | <++>        |
+| `t`         | layout                       | another layout           | <++>        |
 | `s`         | make a window 'sticky'       | <++>                     | <++>        |
 | `d`         | `dmenu_run`                  | <++>                     | <++>        |
 | `f`         | full screen                  | <++>                     | <++>        |
@@ -18,8 +21,6 @@
 | `i`         | go previous window           | move window to previous  | <++>        |
 | `k`         | go next window               | move window to next      | <++>        |
 | `v`         | go to the master window      | <++>                     | <++>        |
-| `z`         | <++>                         | <++>                     | <++>        |
-| `x`         | <++>                         | <++>                     | <++>        |
 | `a`         | full the gap between windows | <++>                     | rarely used |
 | `c`         | <++>                         | <++>                     | <++>        |
 | `b`         | open browser                 | toggle the statusbar     | rarely used |
@@ -34,7 +35,6 @@
 | `=` `+`     | turn up the audio            | turn up the audio        | <++>        |
 | `;` `:`     | <++>                         | move tag to next         | <++>        |
 | `'` `"`     | calculator                   | <++>                     | <++>        |
-| `/` `?`     | <++>                         | <++>                     | <++>        |
 | `\` `\|`    | switch previous tag          | <++>                     | <++>        |
 | `Tab`       | switch previous tag          | <++>                     | <++>        |
 | `Print`     | `maimfull`                   | `maimpick`               | update this |
