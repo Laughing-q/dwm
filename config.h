@@ -149,7 +149,6 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */      // using SHCMD("") to unmap a key
-	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
 	TAGKEYS(			XK_1,		0)
 	TAGKEYS(			XK_2,		1)
 	TAGKEYS(			XK_3,		2)
@@ -162,9 +161,11 @@ static Key keys[] = {
 	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
 
+  // emoji
+	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
   /* Operation */
 	{ MODKEY,			XK_q,		killclient,	{0} },
-	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },      // lack and never used
+	 // MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },      // lack and never used
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
 
@@ -189,36 +190,35 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,			XK_b,		togglebar,	{0} },
 
   /* adjust the gap */
-	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },                // rarely used
-	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },                // rarely used
+	// { MODKEY,			XK_z,		incrgaps,	{.i = +3 } },                // rarely used
+	// { MODKEY,			XK_x,		incrgaps,	{.i = -3 } },                // rarely used
 	// { MODKEY,			XK_x,	spawn,	SHCMD("maimxx") },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },                     // rarely used
-	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },           // rarely used
+	// { MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },           // rarely used
 
   /* full screen */
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 
   /* Programs */
 	{ MODKEY,			XK_b,		spawn,		SHCMD("$BROWSER") },         // rarely used
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e sudo nmtui") },    // modify settings of network, rarely used
+	// { MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e sudo nmtui") },    // modify settings of network, rarely used
 	{ MODKEY,			XK_h,		spawn,		SHCMD("translate") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lfimg") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD(TERMINAL " -e bpytop") },
-	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },             // never used, figure the command
 
   /* Layouts */    // never used, probably should be removed
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
-	{ MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /* spiral */
-	{ MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
-	{ MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /* deck */
-	{ MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /* monocle */
-	{ MODKEY,			XK_n,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
-	{ MODKEY|ShiftMask,		XK_n,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
-	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
+	// { MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /* spiral */
+	// { MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
+	// { MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /* deck */
+	// { MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /* monocle */
+	// { MODKEY,			XK_n,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
+	// { MODKEY|ShiftMask,		XK_n,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
+	// { MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
+	// { MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
+	// { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
 
   /* Tag */
   /* switch previous tag */
@@ -230,34 +230,32 @@ static Key keys[] = {
 	{ MODKEY,			XK_l,	shiftview,	{ .i = 1 } },
 
   /* move current tag to prev/next */
-	{ MODKEY|ShiftMask,		XK_h,		shifttag,	{ .i = -1 } },      // never used, keep
-	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } }, // never used, keep
+	{ MODKEY|ShiftMask,		XK_h,		shifttag,	{ .i = -1 } },
+	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 
   /* monitor movement */
-	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },          // never used, important, keep
+	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
 	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
 
   /* System */
-	// { MODKEY,			XK_BackSpace,	spawn,		SHCMD("sysact") },    // lack, never used
-	// { MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") },  // lack, never used
+	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("dm-kill") },    // lack, never used
 	// { MODKEY,			XK_F2,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") },    // never used
-	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },    // never used, probably should map it to another key
+	// { MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },    // never used, probably should map it to another key
   // never used, figure the command
-	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
-	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
-	{ MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") },
-	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
-	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
-	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
-	{ MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
+	// { MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	// { MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
+	// { MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
+	// { MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") },
+	// { MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
+	// { MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
+	// { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
+	// { MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
 
   /* dmenu option */
 	{ MODKEY,			XK_c,		spawn,		SHCMD("dm-confedit") },    // only use it to open TODOList
 	{ MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },         // rarely used
-	{ MODKEY,			XK_w,		spawn,		SHCMD("dm-websearch") },   // never used
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$BROWSER www.github.com --new-window") },
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },    // probably map it to another key
                                                              //
