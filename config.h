@@ -165,7 +165,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
   /* Operation */
 	{ MODKEY,			XK_q,		killclient,	{0} },
-	 // MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },      // lack and never used
+  { MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
 
@@ -192,7 +192,6 @@ static Key keys[] = {
   /* adjust the gap */
 	// { MODKEY,			XK_z,		incrgaps,	{.i = +3 } },                // rarely used
 	// { MODKEY,			XK_x,		incrgaps,	{.i = -3 } },                // rarely used
-	// { MODKEY,			XK_x,	spawn,	SHCMD("maimxx") },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },                     // rarely used
 	// { MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },           // rarely used
@@ -240,7 +239,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
 
   /* System */
-	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("dm-kill") },    // lack, never used
 	// { MODKEY,			XK_F2,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") },    // never used
 	// { MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },    // never used, probably should map it to another key
   // never used, figure the command
@@ -257,13 +255,18 @@ static Key keys[] = {
 	{ MODKEY,			XK_c,		spawn,		SHCMD("dm-confedit") },    // only use it to open TODOList
 	{ MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },         // rarely used
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$BROWSER www.github.com --new-window") },
-	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },    // probably map it to another key
-                                                             //
+	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },
+	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("dm-kill") },  // for keyboard with 67-keys 
+
   /* Screenshot */
 	{ 0,				XK_Print,	spawn,		SHCMD("maimfull") },               // probably map it to another key
 	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },         // probably map it to another key
+  // for keyboard with 67-keys 
+	{ MODKEY,			XK_x,	spawn,	SHCMD("maimp") },
+	{ MODKEY|ShiftMask,			XK_x,	spawn,	SHCMD("maimpick") },
+
   // never used, figure the command
-	{ MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
+	// { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 
 
   /* Audio */  // never used

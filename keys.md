@@ -6,9 +6,10 @@
 | `u`         | <++>                         | <++>                     | <++>        |
 | `o`         | <++>                         | <++>                     | <++>        |
 | `z`         | <++>                         | <++>                     | <++>        |
-| `x`         | <++>                         | <++>                     | <++>        |
+| `n`         | <++>                         | <++>                     | <++>        |
 | `/` `?`     | <++>                         | <++>                     | <++>        |
-| `q`         | quit window                  | <++>                     | --          |
+| `x`         | `maimp`                      | `maimpick`               | <++>        |
+| `q`         | quit window                  | `sysact`                 | --          |
 | `r`         | lf                           | bpytop                   | <++>        |
 | `t`         | layout                       | another layout           | <++>        |
 | `s`         | make a window 'sticky'       | <++>                     | <++>        |
@@ -22,9 +23,8 @@
 | `k`         | go next window               | move window to next      | <++>        |
 | `v`         | go to the master window      | <++>                     | <++>        |
 | `a`         | full the gap between windows | <++>                     | rarely used |
-| `c`         | <++>                         | <++>                     | <++>        |
+| `c`         | `dm-confedit`                | <++>                     | <++>        |
 | `b`         | open browser                 | toggle the statusbar     | rarely used |
-| `n`         | <++>                         | <++>                     | <++>        |
 | `m`         | `dm-man`                     | toggle pamixer           | rarely used |
 | `p`         | `mpc toggle`                 | ncmpcpp                  | <++>        |
 | `[` `{`     | `mpc seek -10`(快退)         | `mpc seek -60`(快退)     | <++>        |
@@ -46,4 +46,6 @@
 | `Right`     | chose right screen           | move to the right screen | <++>        |
 | `           | emoji                        | <++>                     | <++>        |
 
+- TODO
+    * mount/umount
 - Some other keys: F1-12, `pageup`, `pagedown`
