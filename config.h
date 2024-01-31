@@ -264,6 +264,7 @@ static Key keys[] = {
   // for keyboard with 67-keys 
 	{ MODKEY,			XK_x,	spawn,	SHCMD("maimp") },
 	{ MODKEY|ShiftMask,			XK_x,	spawn,	SHCMD("maimpick") },
+	{ MODKEY,			XK_z,	spawn,	SHCMD("maimc") },
 
   // never used, figure the command
 	// { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
