@@ -203,7 +203,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_b,		spawn,		SHCMD("$BROWSER") },         // rarely used
 	// { MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e sudo nmtui") },    // modify settings of network, rarely used
 	{ MODKEY,			XK_h,		spawn,		SHCMD("translate") },
-	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e lfimg") },
+	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e yazi") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD(TERMINAL " -e bpytop") },
 
   /* Layouts */    // never used, probably should be removed
