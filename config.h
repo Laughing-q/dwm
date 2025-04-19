@@ -259,12 +259,14 @@ static Key keys[] = {
 	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("dm-kill") },  // for keyboard with 67-keys 
 
   /* Screenshot */
-	{ 0,				XK_Print,	spawn,		SHCMD("maimfull") },               // probably map it to another key
-	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },         // probably map it to another key
+	// { 0,				XK_Print,	spawn,		SHCMD("maimfull") },               // probably map it to another key
+	{ 0,				XK_Print,	spawn,		SHCMD("flameshot screen") },               // probably map it to another key
+	{ ShiftMask,			XK_Print,	spawn,		SHCMD("flameshot full") },         // probably map it to another key
   // for keyboard with 67-keys 
-	{ MODKEY,			XK_x,	spawn,	SHCMD("maimp") },
-	{ MODKEY|ShiftMask,			XK_x,	spawn,	SHCMD("maimpick") },
-	{ MODKEY,			XK_z,	spawn,	SHCMD("maimc") },
+	// { MODKEY,			XK_x,	spawn,	SHCMD("maimp") },
+	{ MODKEY,			XK_x,	spawn,	SHCMD("flameshot gui") },
+	// { MODKEY|ShiftMask,			XK_x,	spawn,	SHCMD("maimpick") },
+	// { MODKEY,			XK_z,	spawn,	SHCMD("maimc") },  # never used
 
   // never used, figure the command
 	// { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
