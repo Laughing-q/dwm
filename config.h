@@ -222,7 +222,7 @@ static Key keys[] = {
   /* Tag */
   /* switch previous tag */
 	{ MODKEY,			XK_Tab,		view,		{0} },
-	{ MODKEY,			XK_backslash,		view,		{0} },  // rarely used
+	// { MODKEY,			XK_backslash,		view,		{0} },  // rarely used
 
   /* go prev/next tag */
 	{ MODKEY,			XK_j,		shiftview,	{ .i = -1 } },
