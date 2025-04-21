@@ -158,8 +158,8 @@ static Key keys[] = {
 	TAGKEYS(			XK_7,		6)
 	TAGKEYS(			XK_8,		7)
 	TAGKEYS(			XK_9,		8)
-	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
-	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
+	// { MODKEY,			XK_0,		view,		{.ui = ~0 } },
+	// { MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
 
   // emoji
 	{ MODKEY,			XK_grave,	spawn,	SHCMD("dmenuunicode") },
@@ -221,8 +221,8 @@ static Key keys[] = {
 
   /* Tag */
   /* switch previous tag */
-	{ MODKEY,			XK_Tab,		view,		{0} },       // never used, keep
-	{ MODKEY,			XK_backslash,		view,		{0} },
+	{ MODKEY,			XK_Tab,		view,		{0} },
+	{ MODKEY,			XK_backslash,		view,		{0} },  // rarely used
 
   /* go prev/next tag */
 	{ MODKEY,			XK_j,		shiftview,	{ .i = -1 } },
