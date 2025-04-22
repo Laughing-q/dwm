@@ -180,8 +180,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
   /* J and L are automatically bound above in STACKEYS */
 
-	{ MODKEY|ShiftMask,			XK_j,		setmfact,	{.f = -0.05} },
-	{ MODKEY|ShiftMask,			XK_l,		setmfact,	{.f = +0.05} },
+  // NOTE: does not really use these to keys to resize as mostly I'm using fullscreen mode
+  // use these keys to move windows between multiple monitors
+	// { MODKEY|ShiftMask,			XK_j,		setmfact,	{.f = -0.05} },
+	// { MODKEY|ShiftMask,			XK_l,		setmfact,	{.f = +0.05} },
 
   /* make a window "sticky"(follow you from tag to tag) */
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
@@ -233,10 +235,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 
   /* monitor movement */
-	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
-	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
-	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
+	{ MODKEY|Mod1Mask,			XK_j,	focusmon,	{.i = -1 } },
+  { MODKEY|Mod1Mask,			XK_l,	focusmon,	{.i = +1 } },
+	{ MODKEY|ShiftMask,		  XK_j,	tagmon,		{.i = -1 } },
+	{ MODKEY|ShiftMask,		  XK_l,	tagmon,		{.i = +1 } },
 
   /* System */
 	// { MODKEY,			XK_F2,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") },    // never used
