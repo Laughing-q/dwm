@@ -170,7 +170,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
 
   /* new a floating window */
-	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
+	{ MODKEY,		  XK_backslash,	togglescratch,	{.ui = 0} },
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },   // 单引号键, calculator
 
   /* switch the master window */
@@ -223,7 +223,6 @@ static Key keys[] = {
   /* Tag */
   /* switch previous tag */
 	{ MODKEY,			XK_Tab,		view,		{0} },
-	// { MODKEY,			XK_backslash,		view,		{0} },  // rarely used
 
   /* go prev/next tag */
 	{ MODKEY,			XK_j,		shiftview,	{ .i = -1 } },
