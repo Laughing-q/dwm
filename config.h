@@ -197,7 +197,8 @@ static Key keys[] = {
 	// { MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },           // rarely used
 
   /* full screen */
-	{ MODKEY,			XK_f,		togglefullscr,	{0} },
+	{ MODKEY,			XK_f,		togglefullscr,	{.i = 1} },
+	{ MODKEY|ShiftMask,			XK_f,		togglefullscr,	{.i = 0} },
 
   /* Programs */
 	{ MODKEY,			XK_b,		spawn,		SHCMD("$BROWSER") },         // rarely used
