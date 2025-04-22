@@ -1703,7 +1703,7 @@ setfocus(Client *c)
 }
 
 void
-setfullscreen(Client *c, int fullscreen, int usegaps)
+setfullscreen(Client *c, int fullscreen, int ignore_bar)
 {
 	if (fullscreen && !c->isfullscreen) {
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
@@ -1716,9 +1716,9 @@ setfullscreen(Client *c, int fullscreen, int usegaps)
 		resizeclient(c, 
 			c->mon->mx,
       // adding gaps here to show the status bar so I don't get lost with full mode sometimes
-			usegaps ? c->mon->my + c->mon->gappoh * 2 : c->mon->my,
+			ignore_bar ? c->mon->my + bh : c->mon->my,
 			c->mon->mw,
-			usegaps ? c->mon->mh - c->mon->gappoh * 2 : c->mon->mh
+			ignore_bar ? c->mon->mh - bh : c->mon->mh
 		);
 	} else if (!fullscreen && c->isfullscreen){
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
