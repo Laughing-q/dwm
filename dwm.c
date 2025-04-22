@@ -1715,6 +1715,7 @@ setfullscreen(Client *c, int fullscreen, int usegaps)
 		c->isfloating = 1;
 		resizeclient(c, 
 			c->mon->mx,
+      // adding gaps here to show the status bar so I don't get lost with full mode sometimes
 			usegaps ? c->mon->my + c->mon->gappoh * 2 : c->mon->my,
 			c->mon->mw,
 			usegaps ? c->mon->mh - c->mon->gappoh * 2 : c->mon->mh
