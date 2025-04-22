@@ -253,7 +253,7 @@ static Key keys[] = {
 
   /* dmenu option */
 	{ MODKEY,			XK_c,		spawn,		SHCMD("dm-confedit") },    // only use it to open TODOList
-	{ MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },         // rarely used
+	// { MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },         // rarely used
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$BROWSER www.github.com --new-window") },
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },
 	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("dm-kill") },  // for keyboard with 67-keys 
