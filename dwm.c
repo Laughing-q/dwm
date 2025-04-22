@@ -237,7 +237,7 @@ static void sendmon(Client *c, Monitor *m);
 static void setclientstate(Client *c, long state);
 static void setclienttagprop(Client *c);
 static void setfocus(Client *c);
-static void setfullscreen(Client *c, int fullscreen);
+static void setfullscreen(Client *c, int fullscreen, int usegaps);
 static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
@@ -530,7 +530,7 @@ unswallow(Client *c)
 	c->swallowing = NULL;
 
 	/* unfullscreen the client */
-	setfullscreen(c, 0);
+	setfullscreen(c, 0, 0);
 	updatetitle(c);
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
@@ -676,7 +676,7 @@ clientmessage(XEvent *e)
 		if (cme->data.l[1] == netatom[NetWMFullscreen]
 		|| cme->data.l[2] == netatom[NetWMFullscreen])
 			setfullscreen(c, (cme->data.l[0] == 1 /* _NET_WM_STATE_ADD    */
-				|| (cme->data.l[0] == 2 /* _NET_WM_STATE_TOGGLE */ && !c->isfullscreen)));
+				|| (cme->data.l[0] == 2 /* _NET_WM_STATE_TOGGLE */ && !c->isfullscreen)), 0);
 	} else if (cme->message_type == netatom[NetActiveWindow]) {
 		if (c != selmon->sel && !c->isurgent)
 			seturgent(c, 1);
@@ -1703,7 +1703,7 @@ setfocus(Client *c)
 }
 
 void
-setfullscreen(Client *c, int fullscreen)
+setfullscreen(Client *c, int fullscreen, int usegaps)
 {
 	if (fullscreen && !c->isfullscreen) {
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
@@ -1713,8 +1713,12 @@ setfullscreen(Client *c, int fullscreen)
 		c->oldbw = c->bw;
 		c->bw = 0;
 		c->isfloating = 1;
-		resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw, c->mon->mh);
-		XRaiseWindow(dpy, c->win);
+		resizeclient(c, 
+			c->mon->mx,
+			usegaps ? c->mon->my + c->mon->gappoh * 2 : c->mon->my,
+			c->mon->mw,
+			usegaps ? c->mon->mh - c->mon->gappoh * 2 : c->mon->mh
+		);
 	} else if (!fullscreen && c->isfullscreen){
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
 			PropModeReplace, (unsigned char*)0, 0);
@@ -2012,7 +2016,7 @@ void
 togglefullscr(const Arg *arg)
 {
   if(selmon->sel)
-    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
+    setfullscreen(selmon->sel, !selmon->sel->isfullscreen, 0);
 }
 
 void
@@ -2361,7 +2365,7 @@ updatewindowtype(Client *c)
 	Atom wtype = getatomprop(c, netatom[NetWMWindowType]);
 
 	if (state == netatom[NetWMFullscreen])
-		setfullscreen(c, 1);
+		setfullscreen(c, 1, 0);
 	if (wtype == netatom[NetWMWindowTypeDialog])
 		c->isfloating = 1;
 }
