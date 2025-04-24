@@ -255,7 +255,7 @@ static Key keys[] = {
 	// { MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") },
 
   /* dmenu option */
-	{ MODKEY,			XK_c,		spawn,		SHCMD("dm-confedit") },    // only use it to open TODOList
+	{ MODKEY,			XK_c,		spawn,		SHCMD(TERMINAL " -e $EDITOR $HOME/TODO_List/README.md") },    // only use it to open TODOList
 	// { MODKEY,			XK_m,		spawn,		SHCMD("dm-man") },         // rarely used
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$BROWSER www.github.com --new-window") },
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dm-kill") },
